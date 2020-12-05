@@ -32,30 +32,27 @@ class ControleDeFluxo{
 			std::cout << "enviando pacote" << std::endl;
 			int rotear = roteamento->rotear();
 			switch(rotear){
-				case 0:	std::cout << controle1->chaveamento->setPacote(memoria->lerMem(), rotear) << std::endl;
-						controle1->chaveamento->pacote1->imprimir();
+				case 0:	controle1->chaveamento->setPacote(memoria->lerMem(), rotear);
 						std::cout << "chaveamento 0" << std::endl;
 						break;
-				case 1: std::cout << controle2->chaveamento->setPacote(memoria->lerMem(), rotear) << std::endl;
-						controle2->chaveamento->pacote2->imprimir();
+				case 1: controle2->chaveamento->setPacote(memoria->lerMem(), rotear);
 						std::cout << "chaveamento 1" << std::endl;
 						break;		
-				case 2: std::cout << controle3->chaveamento->setPacote(memoria->lerMem(), rotear) << std::endl;
-						controle3->chaveamento->pacote3->imprimir();
+				case 2: controle3->chaveamento->setPacote(memoria->lerMem(), rotear);
 						std::cout << "chaveamento 2" << std::endl;
 						break;
-				case 3: std::cout << controle4->chaveamento->setPacote(memoria->lerMem(), rotear) << std::endl;
-						controle4->chaveamento->pacote4->imprimir();
+				case 3: controle4->chaveamento->setPacote(memoria->lerMem(), rotear);
 						std::cout << "chaveamento 3" << std::endl;
 						break;
 			}
 		}
+
 		//Parte da direita
 		void receberPacote(){
 			std::cout << "recebendo pacote" << std::endl;
 			Pacote * aux = chaveamento->chavear();
 			memoria->escreverMem(aux);
-			//ux->imprimir();
+			std::cout << "Pacote recebido com sucesso!" << std::endl;
 		}
 };
 

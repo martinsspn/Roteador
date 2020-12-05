@@ -15,6 +15,10 @@ public:
 
 	Chaveamento(Arbitro * _arbitro){
 		arbitro = _arbitro;
+		pacote1 = new Pacote(0,0,0);
+		pacote2 = new Pacote(0,0,0);
+		pacote3 = new Pacote(0,0,0);
+		pacote4 = new Pacote(0,0,0);
 	}
 
 	int setPacote(Pacote * pacote, int idx){

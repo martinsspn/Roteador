@@ -19,10 +19,6 @@ public:
 		std::cout << "memorizado com sucesso" << std::endl;
 	}
 
-	void zerarMem(){
-		std::cout << "Zerando memória" << std::endl;
-		pacote = NULL;
-	}
 };
 
 #endif

@@ -27,19 +27,21 @@ int main(){
 	ctrlFluxoR4 = new ControleDeFluxo(chaveamento4, arbitro1, arbitro2, arbitro3, arbitro5);
 	ctrlFluxoR5 = new ControleDeFluxo(chaveamento5, arbitro1, arbitro2, arbitro3, arbitro4);
 	ctrlFluxoR1->setControles(ctrlFluxoR2, ctrlFluxoR3, ctrlFluxoR4, ctrlFluxoR5);
-	ctrlFluxoR1->setControles(ctrlFluxoR1, ctrlFluxoR3, ctrlFluxoR4, ctrlFluxoR5);
-	ctrlFluxoR1->setControles(ctrlFluxoR1, ctrlFluxoR2, ctrlFluxoR4, ctrlFluxoR5);
-	ctrlFluxoR1->setControles(ctrlFluxoR1, ctrlFluxoR2, ctrlFluxoR3, ctrlFluxoR5);
-	ctrlFluxoR1->setControles(ctrlFluxoR1, ctrlFluxoR2, ctrlFluxoR3, ctrlFluxoR4);
+	ctrlFluxoR2->setControles(ctrlFluxoR1, ctrlFluxoR3, ctrlFluxoR4, ctrlFluxoR5);
+	ctrlFluxoR3->setControles(ctrlFluxoR1, ctrlFluxoR2, ctrlFluxoR4, ctrlFluxoR5);
+	ctrlFluxoR4->setControles(ctrlFluxoR1, ctrlFluxoR2, ctrlFluxoR3, ctrlFluxoR5);
+	ctrlFluxoR5->setControles(ctrlFluxoR1, ctrlFluxoR2, ctrlFluxoR3, ctrlFluxoR4);
 	ctrlFluxoR1->memoria->escreverMem(pacote);
-	ctrlFluxoR1->memoria->pacote->imprimir();
 	cout << "Roteador 1 envia requisição para o roteador 3" << endl;
 	ctrlFluxoR1->enviarPacote(); //Roteador 1 manda valid
-	//ctrlFluxoR5->chaveamento->pacote4->imprimir();
+	//ctrlFluxoR2->enviarPacote();
+	//ctrlFluxoR3->enviarPacote();
+	//ctrlFluxoR4->enviarPacote();
+	//ctrlFluxoR5->enviarPacote();
 	//ctrlFluxoR1->receberPacote();
 	//ctrlFluxoR2->receberPacote();
 	//ctrlFluxoR3->receberPacote();
 	//ctrlFluxoR4->receberPacote();
 	ctrlFluxoR5->receberPacote(); //Roteador 2 responde ack
-	//ctrlFluxoR5->memoria->pacote->imprimir();
+	ctrlFluxoR5->memoria->pacote->imprimir();
 }
